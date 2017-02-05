@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method='POST' action="/addsongs">
+			<input type="text" name="searchbox" value=""><br>
+            <button type="submit" class="btn btn-default" name="search" value="search">
+                Search
+            </button>
+</form>
+
+<form method='POST' action="/addsongs">
+		{% for song in songs %}
+			<label name="song_label"  class="control-label">
+                <li>{{ song.song_name }}</li>
+                <li>{{ song.artist }}</li>
+                <li>{{ song.album }}</li>
+			</label>
+            <button type="submit" class="btn btn-default" name="request_song" value="{{song.spotify_song_id}}">
+                    Request
+            </button>
+		{% endfor %}
+	</form>
+</body>
+</html>

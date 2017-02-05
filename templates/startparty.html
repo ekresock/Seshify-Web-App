@@ -1,0 +1,46 @@
+<html>
+
+<head>
+	<link href="{{ url_for('static',filename='styles/seshify.css') }}" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+        <div class="header">
+            <h1 class="title">SESHIFY</h1>
+            <ul class="nav">
+            	<li><a href="seshify.html">Home</a></li>
+                <li><a href="#">The Team</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    <br>
+        <form method='POST' action="/addsongs">
+			<div class="center">
+                <input type="text" name="searchbox" placeholder="Search for songs..." id="search">
+            </div>
+            <br>
+            <button type="submit" class="button" name="search" value="search">
+                Search
+            </button>
+        </form>
+
+        <form method='POST' action="/addsongs">
+		{% for song in songs %}
+			<label name="song_label"  class="control-label">
+                <p>{{ song.song_name }}</p>
+                <p>{{ song.artist }}</p>
+                <p>{{ song.album }}</p>
+			</label>
+            <button type="submit" class="btn btn-default" name="request_song" value="{{song.spotify_song_id}}">
+                    Request
+            </button>
+		{% endfor %}
+	</form>
+        
+
+     </div>
+</body>
+
+
+</html>

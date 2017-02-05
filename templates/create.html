@@ -1,0 +1,47 @@
+<html>
+
+<head>
+{#    {% load static %}#}
+{#	<link rel="stylesheet" href="{% static 'styles/seshify.css' %}" type="text/css"/>#}
+		<link href="{{ url_for('static',filename='styles/seshify.css') }}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="container">
+        <div class="header">
+            <h1 class="title">SESHIFY</h1>
+            <ul class="nav">
+            	<li><a href="seshify.html">Home</a></li>
+                <li><a href="#">The Team</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        
+        <div class="panels">
+        	<div class="playlist">
+        	  <p> PLAYLIST</p>
+        	</div>
+            <div class="requested">
+                <form method='POST' action="/">
+                     <label name="song_label"  class="control-label">
+
+                    {% for song in songs %}
+                     </label>
+                          <p>Song Title: {{ song.title }}</p>
+                          <p>Artist: {{ song.artist }}</p>
+                        <button type="submit" class="button" name="upvote" value="{{song.id}}">
+                            Upvote
+                        </button>
+                        <button type="submit" class="button1" name="downvote" value="{{song.id}}">
+                            Downvote
+                        </button>
+                    {% endfor %}
+
+               </form>
+            </div>
+        </div>
+     </div>
+</body>
+
+
+</html>
