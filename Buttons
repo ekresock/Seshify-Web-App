@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+
+.button {
+    background-color: white; 
+    
+    color: black;
+    padding: 16px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    
+    border: 10px solid #4CAF50;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button {border-radius: 4px;}
+
+.button1 {
+    background-color: white; 
+    color: black;
+    padding: 16px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border: 10px solid #f44336;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button1:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+.button1 {border-radius: 4px;}
+ 
+ul.a {list-style-position:inside;}
+ul.b {list-style-position:inside;}
+
+ul {
+    background: #00FFFF;
+    padding: 20px;
+}
+
+</style>
+<body>
+
+<form method='POST' action="/">
+         <label name="song_label"  class="control-label">
+             
+
+         </label>
+                         <ul class="a">
+                  <li>Song Title:</li>
+                <ul class="b">
+                  <li>Artist:</li>
+            <button type="submit" class="button" name="upvote" value="">
+                    Upvote
+                </button>
+                <button type="submit" class="button1" name="downvote" value="">
+                    Downvote
+                </button> 
+
+                
+   </form>
+</body>
+</html>
